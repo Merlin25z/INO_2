@@ -18,3 +18,16 @@ print(df.columns)
 # Сохраняем первые 1000 строк в новый CSV файл
 df.head(1000).to_csv('data_first_1000.csv', index=False)
 
+# Загрузка сохранённого CSV файла
+df_saved = pd.read_csv('data_first_1000.csv')
+
+# Отображение первых 20 строк
+print(df_saved.head(20))
+
+# Отображение последних 20 строк
+print(df_saved.tail(20))
+
+# Пример среза (например, с 100-й по 120-ю строки)
+print(df_saved.iloc[100:121])
+
+
