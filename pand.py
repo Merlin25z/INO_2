@@ -1,5 +1,7 @@
 import pandas as pd
 
+import matplotlib.pyplot as plt
+
 # Загружаем CSV файл в DataFrame
 df = pd.read_csv('data1.csv')
 
@@ -36,6 +38,20 @@ column_name = 'relative_humidity'
 # Проверим, сколько уникальных значений в этом столбце
 unique_values = df[column_name].nunique()
 print(f"Количество уникальных значений в столбце {column_name}: {unique_values}")
+
+
+
+# Находим 10 наибольших значений в столбце windspeed
+top_10_windspeed = df.nlargest(10, 'windspeed')
+
+# Строим график с помощью встроенной функции .plot() pandas
+ax = top_10_windspeed['windspeed'].plot(kind='bar', title='Top 10 Windspeed')
+
+# Добавляем подпись оси Y
+ax.set_ylabel('Windspeed (m/s)')
+
+# Отображаем график с помощью matplotlib
+plt.show()
 
 
 
