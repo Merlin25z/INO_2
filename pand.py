@@ -30,4 +30,12 @@ print(df_saved.tail(20))
 # Пример среза (например, с 100-й по 120-ю строки)
 print(df_saved.iloc[100:121])
 
+# Теперь столбец называется 'relative_humidity'
+column_name = 'relative_humidity'
+
+# Проверим, сколько уникальных значений в этом столбце
+unique_values = df[column_name].nunique()
+print(f"Количество уникальных значений в столбце {column_name}: {unique_values}")
+
+
 
